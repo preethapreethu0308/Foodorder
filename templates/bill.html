@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>order</title>
+    <script type="text/javascript">
+
+        var dt=new Date();
+        window.onload = function()
+        {
+        document.getElementById("datespan").innerHTML=""+dt;
+        }
+    </script>
+    <style>
+        body
+        {
+        background-color:black;
+        text-align:center;
+        }
+        .bill
+        {
+
+            width:80px 50px;
+            text-align:center;
+            font-weight:bold;
+            color:black;
+
+        }
+        .ths
+        {
+            background-color:#aaa;
+            color:black;
+            padding:10px;
+            font-weight:bold;
+        }
+        .tds
+        {
+            background-color:#eee;
+            color:black;
+            padding:10px;
+        }
+        .box1
+        {
+            background-color:white;
+            width:500px;
+            box-shadow:0 0 5px black;
+            text-align:left;
+            margin:100px auto;
+        }
+        .photo1
+        {
+            border-radius:50%;
+            width:50px;
+            height:50px;
+        }
+        .head01 {
+            background-color:blue;
+            padding:10px;
+            color: white;
+            font-weight:bold;
+        }
+        .odr1
+        {
+            background-color:white;
+            padding:10px 50px;
+        }
+        .box2
+        {
+               padding:10px 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="bill">
+    <div class="box1">
+        <div class="head01">
+        <center>
+           <font color="white" size="6">FOODIES SPOT</font><br>
+       <font color="yellow"  size="4">No.19,Kamaraj Salai,Muruga Theatre,Thattanchavady,<br>Puducherry-605009.</font></center>
+    </div>
+        <div class="box2">
+                <center><h2><b>Bill Receipt</b></h2></center>
+        Name:{{ session["user"] }}<br>
+        Date:<span id="datespan">sample</span>
+        <hr>
+
+        </div>
+        <div class="odr1">
+
+            <table border="0" width="100%">
+                <tr>
+                    <th class="ths">Sl.No</th>
+                    <th class="ths">Items</th>
+                    <th class="ths">Price</th>
+                    <th class="ths">Quantity</th>
+                    <th class="ths">Amount</th>
+
+                </tr>
+
+                {% for row in data %}
+                <tr>
+                    <td class="tds">{{ loop.index }}</td>
+                    <td class="tds">{{ row[4] }}</td>
+                    <td class="tds">{{ row[5] }}</td>
+                    <td class="tds">{{ row[6] }}</td>
+                    <td class="tds">{{ row[7] }}</td>
+
+
+                </tr>
+
+                {% endfor %}
+                <tr>
+
+                    <th class="ths"></th>
+                    <th class="ths"></th>
+                    <th class="ths"></th>
+                    <th class="ths">TOTAL</th>
+                 {% for row1 in data1 %}
+                    <th class="ths">{{ row1[0] }}</th>
+                 {% endfor %}
+                </tr>
+            </table>
+        </div>
+        <center>
+            <img class="photo1" src="static/ft.jpg"><br>
+        <font color="blue" size="2">Hope you enjoy your dining experience!</font><br>
+            </center>
+    </div>
+</div>
+</body>
+</html>

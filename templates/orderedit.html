@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>orderupdate</title>
+    <style>
+        .orupt
+        {
+            padding:100px;
+            background-color:#aaf;
+        }
+        .ts
+        {
+            padding:10px;
+            background-color:#fff;
+            color:black;
+        }
+        .photo
+        {
+
+            width:100px;
+            height:100px;
+            padding:50px;
+        }
+
+        </style>
+</head>
+<body>
+<div>
+    {% include "header.html" %}
+</div>
+<div class="orupt">
+    <h1>ORDERS</h1>
+    <form name="form" action="/orderupdate" method="POST">
+    <table border="0">
+
+         {% for row in data %}
+
+        <tr><td class="ts" colspan="2"><img class="photo" src="static/{{ row[2] }}" width="100%"></td></tr>
+        <tr><td class="ts">Food_Id</td><td class="ts"> <input type="hidden" name="ord" value="{{ row[0] }}">{{ row[0] }} </td></tr>
+        <tr><td class="ts">Food_Name</td><td class="ts"><input type="hidden" name="usname" value="{{ row[1] }}">{{ row[1] }}</td></tr>
+        <tr><td class="ts">Price</td><td class="ts"><input type="hidden" name="pri" value="{{ row[3] }}">{{ row[3] }} </td></tr>
+        <tr><td class="ts">Quantity</td><td class="ts"><input type="text" value="" name="qnty"></td></tr>
+
+
+        <tr><td></td><td><input type="Submit" value="Order"></td></tr>
+        {% endfor %}
+
+
+    </table>
+    </form>
+</div>
+<div>
+    {% include "footer.html" %}
+</div>
+</body>
+</html>

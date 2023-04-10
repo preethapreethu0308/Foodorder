@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit</title>
+    <style>
+        .cust11
+        {
+            padding:100px;
+            background-color:#aaf;
+        }
+        .ety
+        {
+            background-color:blue;
+            background-image:linear-gradient(90deg,#f04,#902);
+            padding:10px 20px;
+            color:white;
+            border-radius:10px;
+            border:1px solid #902;
+            text-decoration:none;
+        }
+        .ety:hover
+        {
+            background-color:blue;
+            background-image:linear-gradient(90deg,#902,#f04);
+        }
+        .ths
+        {
+            padding:10px;
+            background-color:#00f;
+            color:white;
+        }
+        .tds
+        {
+            padding:10px;
+            background-color:#fff;
+            color:black;
+        }
+        .tdse
+        {
+            padding:5px 10px;
+            background-color:green;
+            color:lime;
+            text-decoration:none;
+        }
+        .tdsd
+        {
+            padding:5px 10px;
+            background-color:red;
+            color:yellow;
+            text-decoration:none;
+        }
+        .box
+        {
+            padding:10px;
+            background-color:#fff;
+            width:250px;
+            margin:10px;
+            box-shadow:0 0 5px black;
+        }
+        .flexdivision
+        {
+            display:flex;
+            flex-wrap:wrap;
+        }
+        .numhigh
+        {
+            padding:10px;
+            background-color:#f00;
+            width:50px;
+            height:50px;
+            border-radius:50%;
+            text-align:center;
+            font-size:30px;
+            color:yellow;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    {% include "header.html" %}
+</div>
+
+<div class="cust11">
+    <h1>CUSTOMER DETAILS</h1>
+    <form name="form" action="/custmerupdate" method="POST">
+    <table border="0" width="100%">
+
+        {% for row in data %}
+
+            <tr><td>Sl.No</td><td class="tds" name="sl">{{ loop.index }}</td></tr>
+            <tr><td>Customer_Id</td><td class="tds"><input type="text" value="{{ row[0] }}" class="txtx" name="custid"></td></tr>
+            <tr><td>Customer_Name</td><td class="tds"><input type="text" value="{{ row[1] }}" class="txtx" name="cname"></td></tr>
+            <tr><td>Customer_Image</td><td class="tds"><input type="text" value="{{ row[5] }}" class="txtx" name="custimage"></td></tr>
+            <tr><td>Email_Id</td><td class="tds"><input type="text" value="{{ row[2] }}" class="txtx" name="email"></td></tr>
+            <tr><td>Address</td><td class="tds"><input type="text" value="{{ row[3] }}" class="txtx" name="add"></td></tr>
+            <tr><td>PhoneNumber</td><td class="tds"><input type="text" value="{{ row[4] }}" class="txtx" name="phone"></td></tr><br>
+
+        <tr><td></td><td><input type="Submit" value="UPDATE"></td></tr>
+        {% endfor %}
+    </table>
+        </form>
+</div>
+<div>
+    {% include "footer.html" %}
+</div>
+
+</body>
+</html>

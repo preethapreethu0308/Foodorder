@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME PAGE</title>
+    <style>
+        .picdiv
+        {
+        padding:200px;
+        background-image:url("/static/fd.jpg");
+        text-shadow:0 0 5px black;
+        }
+        .pictxt
+        {
+            color:white;
+            font-weight:bold;
+            background-color:rgba(0,0,0,0.3);
+            text-align:center;
+        }
+
+        .hom1
+        {
+            font-weight:bold;
+            font-size:40px;
+            color:black;
+            background-color:#DBF9DB;
+            padding:20px;
+        }
+        .hom2
+        {
+            background-color:#FF007F;
+            width:90px;
+            color:white;
+            border-radius:10px;
+            padding:15px 10px;
+            border:1px solid #902;
+            text-decoration:none;
+            text-align:center;
+            text-weight:bold;
+
+        }
+        .s1
+        {
+            color:#36F57F;
+        }
+    </style>
+</head>
+<body>
+<div>
+    {% include "header.html" %}
+</div>
+<div class="picdiv">
+    <div class="pictxt">
+    <font size="7" color="white"><b>Are you hungry?</b></font><br>
+    <p>Don't wait!!!!</p><br>
+    <p>Let start to Order food now!</p><br>
+    <input type="text" value="Checkout Menu" class="txt">
+    </div>
+</div>
+<div class="hom1">
+    <h1>Welcome {{ session["user"] }}</h1>
+    <p>Pick Your
+        <span class="s1">Own Online <br>Food Orders</span> in
+        <span class="s1">Five minutes</span> or<br> less!</p>
+        <input type="button" value="Order Now" class="hom2">
+</div>
+<div>
+    {% include "footer.html" %}
+</div>
+</body>
+</html>

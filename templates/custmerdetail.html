@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>customer Detail</title>
+    <style>
+        .customer1
+        {
+            padding:20px 50px;
+            background-color:#eee;
+        }
+
+        .ths
+        {
+            padding:10px;
+            background-color:#550A35;
+            color:white;
+        }
+        .tds
+        {
+            padding:10px;
+            background-color:#E799A3;
+            color:black;
+        }
+        .tdse
+        {
+            padding:5px 10px;
+            background-color:green;
+            color:lime;
+            text-decoration:none;
+        }
+        .tdsd
+        {
+            padding:5px 10px;
+            background-color:red;
+            color:yellow;
+            text-decoration:none;
+        }
+        .photo
+        {
+            border-radius:50%;
+            width:50px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    {% include "header.html" %}
+</div>
+<div class="customer1">
+    <h1>CUSTOMER DETAILS</h1>
+    <table border="0" width="100%">
+        <tr>
+            <th class="ths">Sl.No</th>
+            <th class="ths">Customer_Id</th>
+            <th class="ths">Customer_Name</th>
+             <th class="ths">Customer_Image</th>
+            <th class="ths">Email_Id</th>
+            <th class="ths">Address</th>
+            <th class="ths">PhoneNumber</th>
+            <th class="ths" colspan="2">Action</th>
+
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td class="tds">{{ loop.index }}</td>
+            <td class="tds">{{ row[0] }}</td>
+            <td class="tds">{{ row[1] }}</td>
+            <td class="tds"><img class="photo" src="static/{{ row[5] }}" width="100%"></td>
+            <td class="tds">{{ row[2] }}</td>
+            <td class="tds">{{ row[3] }}</td>
+            <td class="tds">{{ row[4] }}</td><br>
+            <td class="tds"><a class="tdse" href="/customeredit?id={{ row[0] }}">Edit</a></td>
+            <td class="tds"><a class="tdsd" href="/customerdelete?id={{ row[0] }}">Delete</a></td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<div>
+    {% include "footer.html" %}
+</div>
+
+</body>
+</html>

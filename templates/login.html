@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body
+        {
+            background-image:linear-gradient(90deg,#16E2F5,#FD349C);
+        }
+        .log
+        {
+
+            width:80px 50px;
+            text-align:center;
+        }
+        .btn
+        {
+            background-image:linear-gradient(90deg,#16E2F5,#357EC7,#FD349C);
+            padding:10px 20px;
+            color:white;
+            width:100%;
+            border-radius:10px;
+            border1px solid #902;
+            text-decoration:none;
+        }
+        .btn:hover
+        {
+            background-color:cyan;
+            background-image:linear-gradient(90deg,#357EC7,#16E2F5);
+        }
+        .box2
+        {
+            padding:50px;
+            background-color:white;
+            width:350px;
+            box-shadow:0 0 5px black;
+            text-align:left;
+            margin:100px auto;
+            box-sizing:border-box;
+        }
+        .txtbox
+        {
+            width:100%;
+            padding:10px;
+            box-sizing:border-box;
+        }
+    </style>
+</head>
+<body>
+<div class="log">
+    <div class="box2">
+        <form name="form" action="/logincheckup" method="POST">
+            <center><h1>Login</h1></center><br>
+            <font size="5" text-align="left"><b>Username</b></font><br><br>
+            <input type="text"  name="username" placeholder="Type Your Username" class="txtbox">
+            <hr>
+            <font size="5"><b>Password</b></font><br><br>
+            <input type="password" name="password" placeholder="Type Your Password" class="txtbox">
+            <hr><br><br><br>
+            <input type="Submit" value="Login" class="btn"><br><br>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

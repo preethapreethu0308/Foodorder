@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HEADER</title>
+    <style>
+
+
+   body
+   {
+        margin:0;
+        padding:0;
+   }
+        .head1
+        {
+            background-color:#2B547E;
+            padding:10px 50px;
+        }
+        .menu
+        {
+
+            color:white;
+            font-weight:bold;
+            padding:10px;
+            background-color:#737CA1;
+            text-decoration:none;
+        }
+        .menu:hover
+        {
+            color:violet;
+            background-color:#550A35;
+        }
+    </style>
+</head>
+<body>
+
+<div class="head1">
+    <table width="100%">
+         <tr>
+             <td align="left"><font color="white" size="6"><b>FOODIES SPOT</b></font></td>
+    <td align="right">
+    <a href="/home" class="menu">Home Page</a>
+    <a href="/fooditems" class="menu">Food Items</a>
+    <a href="/custmerdetail" class="menu">Customer Detail</a>
+    <a href="/orders" class="menu">Bill Now</a>
+        {% if session["user"] == 'no' %}
+    <a href="/login" class="menu">Login/SignUp</a>
+        {% else %}
+    <a href="#" class="menu">{{ session["user"] }}</a>
+             {% endif %}
+         </tr>
+</table>
+</div>
+
+</body>
+</html>

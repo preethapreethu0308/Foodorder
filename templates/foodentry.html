@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>entry</title>
+    <style>
+        .entry1
+        {
+            background-color:#F0FFFF;
+            padding:100px 300px;
+        }
+        .txt
+        {
+            padding:10px;
+            width:100%;
+            border:1px solid #00ffff;
+
+        }
+        .btn
+        {
+            color:white;
+            background-color:violet;
+            padding:10px;
+            width:80px;
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+<body>
+<div>
+    {% include "header.html" %}
+</div>
+<div class="entry1">
+    <h1>New Food Entry</h1>
+    <form name="form" action="/dishessave" method="post">
+        Food_Id<br>
+        <input type="text" class="txt" name="Food_Id"><br><br>
+        Food_Name<br>
+        <input type="text" class="txt" name="Food_Name"><br><br>
+        Food_Image
+        <input type="text" class="txt" name="Food_Image"><br><br>
+        Price<br>
+        <input type="text" class="txt" name="Price"><br><br>
+        Category<br>
+        <input type="text" class="txt" name="Category"><br><br>
+        Hotel_Name<br>
+        <input type="text" class="txt" name="Hotel_Name"><br><br>
+        <input type="Submit" value="Save" class="btn" name="Save"><br>
+    </form>
+</div>
+<div>
+    {% include "footer.html" %}
+</div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fooditems</title>
+    <style>
+        .foodies1
+        {
+            padding:100px;
+            background-color:#ccf;
+        }
+        .ety
+        {
+            background-color:red;
+            background-image:linear-gradient(90deg,#f04,#902);
+            padding:10px 20px;
+            color:white;
+            border-radius:10px;
+            border1px solid #902;
+            text-decoration:none;
+        }
+        .ety:hover
+        {
+            background-color:blue;
+            background-image:linear-gradient(90deg,#902,#f04);
+        }
+        .od11
+        {
+            background-color:red;
+            color:white;
+            text-weight:bold;
+            text-decoration:none;
+            border:1px solid #902;
+            padding:10px 20px;
+            background-image:linear-gradient(90deg,#902,#f04);
+            border_radius:10px;
+        }
+        .box
+        {
+            padding:10px;
+            background-color:#fff;
+            width:250px;
+            margin:10px;
+            box-shadow:0 0 5px black;
+            text-align:center;
+            border-radius:10px;
+        }
+        .flexdivision
+        {
+            display:flex;
+            flex-wrap:wrap;
+        }
+        .numhigh
+        {
+            padding:70px;
+            background-color:white;
+            width:50px;
+            height:50px;
+            border-radius:50%
+            text-align:centre;
+            font-size:30px;
+            color:green;
+        }
+    </style>
+</head>
+<body>
+<div>
+    {% include "header.html" %}
+</div>
+
+<div class="foodies1">
+    <h1>Break Fast Items</h1>
+    <a class="ety" href="/foodentry">Add More</a><br><br>
+<div class="flexdivision">
+    {% for row in data1 %}
+    <div class="box">
+           <img src="static/{{ row[2] }}" width="100%"><br><br>
+        <font color="darkgreen" size="4"><b>{{ row[1] }}</b></font> <br>
+        <font color="red" size="5">&#8377 {{ row[3] }} /-</font><br>
+         {{ row[4] }}<br>
+         <b>{{ row[5] }}</b><br><br>
+
+
+       <a class="od11" href="/orderedit?fid={{ row[0] }} ">Order</a><br><br>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+<div class="foodies1">
+    <h1>Lunch Items</h1>
+    <a class="ety" href="/foodentry">Add More</a><br><br>
+<div class="flexdivision">
+    {% for row in data2 %}
+    <div class="box">
+           <img src="static/{{ row[2] }}" width="100%"><br><br>
+        <font color="darkgreen" size="4"><b>{{ row[1] }}</b></font> <br>
+        <font color="red" size="5">&#8377 {{ row[3] }} /-</font><br>
+         {{ row[4] }}<br>
+         <b>{{ row[5] }}</b><br><br>
+
+        <a class="od11" href="/orderedit?fid={{ row[0] }} ">Order</a><br><br>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+<div class="foodies1">
+    <h1>Dinner Items</h1>
+    <a class="ety" href="/foodentry">Add More</a><br><br>
+<div class="flexdivision">
+    {% for row in data3 %}
+    <div class="box">
+           <img src="static/{{ row[2] }}" width="100%"><br><br>
+        <font color="darkgreen" size="4"><b>{{ row[1] }}</b></font> <br>
+        <font color="red" size="5">&#8377 {{ row[3] }} /-</font><br>
+         {{ row[4] }}<br>
+         <b>{{ row[5] }}</b><br><br>
+
+        <a class="od11" href="/orderedit?fid={{ row[0] }} ">Order</a><br><br>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+
+<div class="foodies1">
+    <h1>Starters</h1>
+    <a class="ety" href="/foodentry">Add More</a><br><br>
+<div class="flexdivision">
+    {% for row in data4 %}
+    <div class="box">
+           <img src="static/{{ row[2] }}" width="100%"><br><br>
+        <font color="darkgreen" size="4"><b>{{ row[1] }}</b></font> <br>
+        <font color="red" size="5">&#8377 {{ row[3] }} /-</font><br>
+         {{ row[4] }}<br>
+         <b>{{ row[5] }}</b><br><br>
+
+        <a class="od11" href="/orderedit?fid={{ row[0] }} ">Order</a><br><br>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+
+<div class="foodies1">
+    <h1>Ice Creams</h1>
+    <a class="ety" href="/foodentry">Add More</a><br><br>
+<div class="flexdivision">
+    {% for row in data5 %}
+    <div class="box">
+           <img src="static/{{ row[2] }}" width="100%"><br><br>
+        <font color="darkgreen" size="4"><b>{{ row[1] }}</b></font> <br>
+        <font color="red" size="5">&#8377 {{ row[3] }} /-</font><br>
+         {{ row[4] }}<br>
+         <b>{{ row[5] }}</b><br><br>
+
+        <a class="od11" href="/orderedit?fid={{ row[0] }} ">Order</a><br><br>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+
+<div>
+    {% include "footer.html" %}
+</div>
+</body>
+</html>
